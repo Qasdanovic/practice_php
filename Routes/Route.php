@@ -2,7 +2,6 @@
 
 <?php
 
-
 $url = parse_url($_SERVER["REQUEST_URI"])["path"];
 // dd($url);
 
@@ -15,7 +14,7 @@ $routes = [
 if (array_key_exists($url, $routes)){
     require($routes[$url]);
 } else {
-    echo "page not found";
+    abort();
 }
 
 ?>
