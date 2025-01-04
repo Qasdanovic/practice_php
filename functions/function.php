@@ -3,13 +3,13 @@
 function dd($array)
 {
     echo "<pre>";
-    print_r($array);
+    var_dump($array);
     echo "</pre>";
     die();
 }
 
-function abort(){
-    http_response_code(404);
+function abort($status){
+    http_response_code($status);
     require "views/error.php";
     die();
 }

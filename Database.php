@@ -2,6 +2,7 @@
 class Database {
 
     public $connect;
+    public $statement;
 
     public function __construct($config){
 
@@ -13,12 +14,24 @@ class Database {
     }
 
 
-    public function query($query){
-        
-        $statement = $this->connect->prepare($query);
+    public function query($query, $params = []){
 
-        $statement->execute();
-        return $statement;
+        $this->statement = $this->connect->prepare($query);
+
+        $this->statement->execute($params);
+        return $this;
+        
+    }
+    
+
+
+    public function fetchOne(){
+        return $this->statement->fetch();
+    }
+
+
+    public function getAll(){
+        return $this->statement->fetchAll();
     }
 
 

@@ -13,6 +13,7 @@
                 <a href="/" class="<?php get_bg("/") ?> rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Dashboard</a>
                 <a href="/about" class="<?php get_bg("/about") ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">about</a>
                 <a href="/contact" class="<?php get_bg("/contact") ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">contact</a>
+                <a href="/notes" class="<?php get_bg("/notes") ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">notes</a>
               </div>
             </div>
           </div>
