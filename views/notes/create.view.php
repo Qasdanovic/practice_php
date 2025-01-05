@@ -1,7 +1,7 @@
 <?php $title= "add note :" ?>
-<?php require "partials/temp.php" ?>
-<?php require "partials/navbar.php" ?>
-<?php require "partials/header.php" ?>
+<?php view("partials/temp.php") ?>
+<?php view("partials/navbar.php") ?>
+<?php view("partials/header.php", ["title" => "add note :"]) ?>
     <main>
     <div class="col-span-full p-5">
         <form method="post">
@@ -18,4 +18,4 @@
         </form>
         </div>
     </main>
-<?php require "partials/footer.php" ?>
+<?php view("partials/footer.php") ?>

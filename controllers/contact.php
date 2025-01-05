@@ -1,6 +1,7 @@
 <?php
-$content = "this is Contact page";
-$title = "Contact Page";
-require 'views/contact.view.php';
+view('contact.view.php', [
+    'content' => "this is contact page",
+    'title' => "contact"
+]);
 
 ?>

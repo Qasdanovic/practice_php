@@ -1,11 +1,15 @@
 <?php
 
-$config = require "config/config.php";
-require "Database.php";
+use Core\Database;
+use Core\Validator;
+
+$config = require base_path("config/config.php");
+
+
 $db = new Database($config);
-require "Validator.php";
 
 // dd(Validator::email("kasdhjgsahgsh@g.com"));
+$errors = [];
 
 if($_SERVER["REQUEST_METHOD"] === "POST")
 {
@@ -27,4 +31,8 @@ if($_SERVER["REQUEST_METHOD"] === "POST")
     }
 
 }
-require "views/note-create.view.php";
+
+view('notes/create.view.php', [
+    "errors" => $errors,
+]);
+

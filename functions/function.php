@@ -10,7 +10,7 @@ function dd($array)
 
 function abort($status){
     http_response_code($status);
-    require "views/error.php";
+    view("error.php");
     die();
 }
 
@@ -18,4 +18,15 @@ function abort($status){
 function get_bg($url){
     echo $_SERVER["REQUEST_URI"] === $url ? 'bg-gray-900 text-white :text-gray-300 hover:bg-gray-700 hover':'text-white';
 }
-?>
+
+function base_path($path)
+{
+    return BASE_PATH . $path ;
+}
+
+
+function view($path, $data=[])
+{
+    extract($data);
+    require base_path("views/".$path) ;
+}

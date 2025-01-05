@@ -1,6 +1,6 @@
-<?php require "partials/temp.php" ?>
-<?php require "partials/navbar.php" ?>
-<?php require "partials/header.php" ?>
+<?php view("partials/temp.php") ?>
+<?php view("partials/navbar.php") ?>
+<?php view("partials/header.php", ["title" => "list notes:"]) ?>
 <main>
     <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <?php foreach($users as $user) : ?>
@@ -16,4 +16,4 @@
         <a href="/note/create" class="hover:underline">create note :</a>
     </div>
 </main>
-<?php require "partials/footer.php" ?>
+<?php view("partials/footer.php") ?>

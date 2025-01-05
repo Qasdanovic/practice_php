@@ -1,6 +1,5 @@
-
-
 <?php
+namespace Core;
 
 class Validator {
     public $errors = [] ;
@@ -25,3 +24,6 @@ class Validator {
     //     }
     // }
 }
+
+
+?>
