@@ -10,7 +10,8 @@ $db = new Database($config);
 $users = $db->query("SELECT * FROM users")->getAll();
 // dd($result);
 
-view('notes/index.view.php', [
+
+return view('notes/index.view.php', [
     'content' => "this is notes list page",
     "title" => "notes list",
     'users' => $users

@@ -23,7 +23,12 @@ $route->get("/about", "controllers/about.php");
 
 $route->get("/notes", "controllers/notes/index.php");
 $route->get("/note", "controllers/notes/show.php");
+$route->delete("/note", "controllers/notes/destroy.php");
+
+
 $route->get("/note/create", "controllers/notes/create.php");
+
+$route->post("/notes", "controllers/notes/store.php");
 
 
 ?>

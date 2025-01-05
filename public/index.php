@@ -26,7 +26,7 @@ require base_path("Routes/Routes.php");
 
 $url = parse_url($_SERVER["REQUEST_URI"])["path"];
 $method = $_POST["_method"] ?? $_SERVER["REQUEST_METHOD"];
-
+// dd($method);
 
 $route->route($url, $method);
 // dd($route);
