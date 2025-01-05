@@ -7,6 +7,12 @@
                 <p class="mt-5">
                   <?php echo htmlspecialchars($user["name"] )?>
                 </p>
+
+                <form action="" class="mt-6" method="post">
+                  <input type="hidden" name="_method" value="DELETE">
+                  <input type="hidden" value="<?= $user["id"] ?>">
+                  <button class="text-red-600">delete</button>
+                </form>
       </div>
     </main>
 <?php view("partials/footer.php") ?>
