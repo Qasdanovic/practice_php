@@ -7,7 +7,7 @@ use Core\Database;
 
 $container = new Container();
 
-$container->bind("Core\Database", function(){
+$container->bind(Database::class, function(){
     $config = require base_path("config/config.php");
 
     return new Database($config);

@@ -4,9 +4,9 @@
 // use Core\Database;
 use Core\Validator;
 use Core\App;
+use Core\Database;
 
-$db = App::container()->resolve("Core\Database");
-
+$db = App::resolve(Database::class);
 
 // dd(Validator::email("kasdhjgsahgsh@g.com"));
 $errors = [];

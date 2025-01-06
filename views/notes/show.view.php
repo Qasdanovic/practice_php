@@ -8,10 +8,11 @@
                   <?php echo htmlspecialchars($user["name"] )?>
                 </p>
 
-                <form action="" class="mt-6" method="post">
+                <form action="" class="mt-6 flex gap-x-3 " method="post">
                   <input type="hidden" name="_method" value="DELETE">
                   <input type="hidden" value="<?= $user["id"] ?>">
-                  <button class="text-red-600">delete</button>
+                  <button class="text-red-600 border border-red-600 px-4 py-2 rounded hover:bg-red-600 hover:text-gray-100 transition">delete</button>
+                  <a href="note/edit?id=<?= $user["id"] ?>" class="text-gray-600 border border-gray-600 px-4 py-2 rounded hover:bg-gray-600 hover:text-gray-100 transition">edit</a>
                 </form>
       </div>
     </main>

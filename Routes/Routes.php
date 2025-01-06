@@ -28,6 +28,10 @@ $route->delete("/note", "controllers/notes/destroy.php");
 
 $route->get("/note/create", "controllers/notes/create.php");
 
+$route->get("/note/edit", "controllers/notes/edit.php");
+
+$route->patch("/note", "controllers/notes/update.php");
+
 $route->post("/notes", "controllers/notes/store.php");
 
 
