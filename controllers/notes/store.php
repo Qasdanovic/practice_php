@@ -1,13 +1,12 @@
 <?php
 
 // echo("hello world");
-use Core\Database;
+// use Core\Database;
 use Core\Validator;
+use Core\App;
 
-$config = require base_path("config/config.php");
+$db = App::container()->resolve("Core\Database");
 
-
-$db = new Database($config);
 
 // dd(Validator::email("kasdhjgsahgsh@g.com"));
 $errors = [];

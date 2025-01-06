@@ -1,11 +1,10 @@
 <?php
 
-use Core\Database;
+use Core\App;
 
 
-$config = require base_path("config/config.php");
+$db = App::container()->resolve("Core\Database");
 
-$db = new Database($config);
 
 $users = $db->query("SELECT * FROM users")->getAll();
 // dd($result);

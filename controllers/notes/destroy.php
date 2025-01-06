@@ -1,13 +1,13 @@
 <?php
 
-use Core\Database;
-// use Core\Response;
+use Core\App;
 
-$config = require base_path("config/config.php");
 
-$db = new Database($config);
+$db = App::container()->resolve("Core\Database");
+
+
 $id = $_GET["id"];
-// dd($_GET);
+
 
 
 
