@@ -13,7 +13,7 @@
     </div>
 
     <div>
-        <a href="/note/create" class="hover:underline">create note :</a>
+        <a href="/note/create" class="hover:bg-indigo-600 hover:text-gray-200 border rounded mx-2 border-gray-600 px-4 py-2">create note :</a>
     </div>
 </main>
 <?php view("partials/footer.php") ?>

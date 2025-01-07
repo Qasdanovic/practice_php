@@ -6,6 +6,6 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <title>Document</title>
 </head>
-  <body class="h-full">
+  <body class="h-full font-sans" >
 
   <div class="min-h-full">

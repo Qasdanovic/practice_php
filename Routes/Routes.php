@@ -12,8 +12,8 @@
 //     "/note/create" => base_path("controllers/notes/create.php")
 // ];
 
-
-
+use Core\Middlewares\Auth;
+use Core\Middlewares\Guest;
 
 $route->get("/", "controllers/index.php");
 $route->get("/contact", "controllers/contact.php");
@@ -21,7 +21,8 @@ $route->get("/about", "controllers/about.php");
 
 
 
-$route->get("/notes", "controllers/notes/index.php");
+$route->get("/notes", "controllers/notes/index.php")->only("auth");
+
 $route->get("/note", "controllers/notes/show.php");
 $route->delete("/note", "controllers/notes/destroy.php");
 
@@ -35,7 +36,7 @@ $route->patch("/note", "controllers/notes/update.php");
 $route->post("/notes", "controllers/notes/store.php");
 
 
-$route->get("/login", "controllers/register/index.php");
+$route->get("/login", "controllers/register/index.php")->only("guest");
 $route->post("/login", "controllers/register/store.php");
 
 ?>

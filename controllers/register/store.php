@@ -14,8 +14,8 @@ $password = $_POST['password'];
 //validate the inputs
 $errors = [] ;
 
-if(!Validator::String($email, 6, 50)){
-    $errors["body"]["email"] = "email cannot be empty or more less than 6 chars";
+if(!Validator::email($email)){
+    $errors["body"]["email"] = "please provide a valid email ! ";
 };
 
 if(!Validator::String($password, 6, 50)){
@@ -33,20 +33,29 @@ if(count($errors))
 
 $db = App::resolve(Database::class);
 
-$checkEmail = $db->query("SELECT * FROM users WHERE email=?", [
+$user = $db->query("SELECT * FROM users WHERE email=?", [
     $email
 ])->fetchOne();
 
 // dd($checkEmail);
 
 
-if(! $checkEmail){
-    $errors["check"]["email"] = "user not found";
+if($user){
+    // $errors["check"]["email"] = "user not found";
 
-    return view("register/index.view.php", [
-        "errors" => $errors
+    // return view("register/index.view.php", [
+    //     "errors" => $errors
+    // ]);
+    $_SESSION["user"] = $user;
+    header("location:/");
+} else {
+    $db->query("INSERT INTO users(email, password) VALUE(?,?)", [
+        $email,
+        $password
     ]);
+
+    header("location:/login") ;
 }
 
 
-dd("kaaayn had khona");
+// dd("kaaayn had khona");
