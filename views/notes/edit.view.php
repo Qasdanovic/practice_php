@@ -14,9 +14,9 @@
               rows="3"
               class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"><?= $user["name"] ?></textarea>
             </div>
-            <?php if(isset($errors["body"]) ) : ?>
-                <p class="text-red-600 text-xs"><?= $errors["body"] ?></p>
-            <?php endif ?>
+
+            <p class="text-red-600 text-xs"><?= $errors["body"] ?? null ?></p>
+
             <button class="bg-blue-700 rounded p-2 mt-3 text-gray-100" type="submit">Update</button>
             <a href="/notes" class="bg-red-700 rounded p-2 mt-3 text-gray-100">Cancel</a>
         </form>

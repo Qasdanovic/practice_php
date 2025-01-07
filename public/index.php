@@ -1,5 +1,5 @@
 <?php
-
+use Core\Router;
 const BASE_PATH = __DIR__."/../";
 
 require BASE_PATH."functions/function.php";
@@ -22,7 +22,7 @@ require base_path("bootstrap.php");
 // require base_path("Routes/Route.php");
 
 
-$route = new \Core\Router();
+$route = new Router;
 // dd($route);
 
 require base_path("Routes/Routes.php");

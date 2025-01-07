@@ -16,7 +16,9 @@ function abort($status){
 
 
 function get_bg($url){
-    echo $_SERVER["REQUEST_URI"] === $url ? 'bg-gray-900 text-white :text-gray-300 hover:bg-gray-700 hover':'text-white';
+    echo $_SERVER["REQUEST_URI"] === $url ?
+    'bg-gray-900 text-white :text-gray-300 hover:bg-gray-700 hover':
+    'text-white';
 }
 
 function base_path($path)
@@ -25,8 +27,8 @@ function base_path($path)
 }
 
 
-function view($path, $data=[])
+function view($filename, $data=[])
 {
     extract($data);
-    require base_path("views/".$path) ;
+    require base_path("views/".$filename) ;
 }

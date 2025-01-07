@@ -35,4 +35,7 @@ $route->patch("/note", "controllers/notes/update.php");
 $route->post("/notes", "controllers/notes/store.php");
 
 
+$route->get("/login", "controllers/register/index.php");
+$route->post("/login", "controllers/register/store.php");
+
 ?>
