@@ -1,0 +1,16 @@
+{
+    "name": "dell/practice_php",
+    "authors": [
+        {
+            "name": "Qasdanovic",
+            "email": "oussqas2002@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Core\\" : "Core/",
+            "Http\\" : "Http/"
+        }
+    }
+}
