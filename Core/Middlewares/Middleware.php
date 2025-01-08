@@ -11,4 +11,15 @@ class Middleware
         "auth" => Auth::class,
     ];
 
+
+    public static function resolve($key){
+
+        if(!$key){
+            return;
+        };
+
+        $middleware = self::MAP[$key];
+        (new $middleware)->handel();
+    }
+
 }

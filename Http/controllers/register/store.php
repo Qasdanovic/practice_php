@@ -4,7 +4,6 @@ use Core\App;
 use Core\Database;
 use Core\Validator;
 
-// dd(Database::class);
 
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -37,25 +36,20 @@ $user = $db->query("SELECT * FROM users WHERE email=?", [
     $email
 ])->fetchOne();
 
-// dd($checkEmail);
+
 
 
 if($user){
-    // $errors["check"]["email"] = "user not found";
 
-    // return view("register/index.view.php", [
-    //     "errors" => $errors
-    // ]);
     $_SESSION["user"] = $user;
     header("location:/");
 } else {
     $db->query("INSERT INTO users(email, password) VALUE(?,?)", [
         $email,
-        $password
+        password_hash($password, PASSWORD_BCRYPT)
     ]);
 
     header("location:/login") ;
 }
 
 
-// dd("kaaayn had khona");

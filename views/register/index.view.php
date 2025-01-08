@@ -1,11 +1,11 @@
 <?php view("partials/temp.php") ?>
 <?php view("partials/navbar.php") ?>
-<?php view("partials/header.php", ["title" => $_SESSION["user"]["name"] ?? "Login page :"]) ?>
+<?php view("partials/header.php", ["title" => $_SESSION["user"]["name"] ?? "Register page :"]) ?>
 <main>
     <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
 
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form class="space-y-6" action="/login" method="POST">
+            <form class="space-y-6" action="/register" method="POST">
                 <p class="text-center text-red-600 text-2xl"> 
                     <?= $errors["check"]["email"] ?? null ?>
                 </p>

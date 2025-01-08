@@ -15,28 +15,36 @@
 use Core\Middlewares\Auth;
 use Core\Middlewares\Guest;
 
-$route->get("/", "controllers/index.php");
-$route->get("/contact", "controllers/contact.php");
-$route->get("/about", "controllers/about.php");
+$route->get("/", "index.php");
+$route->get("/", "index.php");
+$route->get("/", "index.php");
+$route->get("/contact", "contact.php");
+$route->get("/about", "about.php");
 
 
 
-$route->get("/notes", "controllers/notes/index.php")->only("auth");
+$route->get("/notes", "notes/index.php")->only("auth");
 
-$route->get("/note", "controllers/notes/show.php");
-$route->delete("/note", "controllers/notes/destroy.php");
-
-
-$route->get("/note/create", "controllers/notes/create.php");
-
-$route->get("/note/edit", "controllers/notes/edit.php");
-
-$route->patch("/note", "controllers/notes/update.php");
-
-$route->post("/notes", "controllers/notes/store.php");
+$route->get("/note", "notes/show.php");
+$route->delete("/note", "notes/destroy.php");
 
 
-$route->get("/login", "controllers/register/index.php")->only("guest");
-$route->post("/login", "controllers/register/store.php");
+$route->get("/note/create", "notes/create.php");
+
+$route->get("/note/edit", "notes/edit.php");
+
+$route->patch("/note", "notes/update.php");
+
+$route->post("/notes", "notes/store.php");
+
+
+$route->get("/register", "register/index.php")->only("guest");
+$route->post("/register", "register/store.php");
+
+$route->get("/login", "login/index.php")->only("guest");
+$route->post("/login", "login/store.php");
+
+$route->post("/logout", "login/destroy.php");
+
 
 ?>

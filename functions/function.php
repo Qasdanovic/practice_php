@@ -32,3 +32,9 @@ function view($filename, $data=[])
     extract($data);
     require base_path("views/".$filename) ;
 }
+    
+function redirect($path){
+    header("location:{$path} ");
+    exit();
+}
+    
